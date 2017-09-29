@@ -155,5 +155,53 @@ Vue.component('todo-item', {
 </ol>
 ```
 
+让我们来修改一下组件的定义，使之能够接受一个属性：
+
+`props`
+
+```javascript
+Vue.component('todo-item', {
+  // todo-item 组件现在接受一个
+  // "prop"，类似于一个自定义属性
+  // 这个属性名为 todo。
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+```
+
+我们可以使用 `v-bind` 指令将 todo 传到每一个重复的组件中：
+
+```html
+<div id="app-7">
+  <ol>
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+    </todo-item>
+  </ol>
+</div>
+```
+
+```javascript
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { id: 0, text: '蔬菜' },
+      { id: 1, text: '奶酪' },
+      { id: 2, text: '随便其他什么人吃的东西' }
+    ]
+  }
+})
+```
+
+子单元通过 `props` 接口实现了与父单元很好的解耦。
+
 ## References
 - [介绍 - Vue.js](https://cn.vuejs.org/v2/guide/index.html)
