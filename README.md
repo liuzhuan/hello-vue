@@ -1,15 +1,9 @@
-# Vue 教程
+# Vue 简明教程
 
-## 目录
+## Vue.js 是什么
 
-- [Vue 2.0](./docs/vue@2.0/README.md)
-- [vue-router](./docs/vue-router/README.md)
-- [vuex](./docs/vuex/README.md)
-- [vue-material](./docs/vue-material/README.md)
-- [axios](./docs/axios/README.md)
-- [Vue 2.0 源码解读](./docs/vue@2.0-source/README.md)
+Vue.js（读音 /vjuː/，类似于 view） 是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，它不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和 Vue 生态系统支持的库结合使用时，Vue 也完全能够为复杂的单页应用程序提供驱动。
 
-## References
-- [Vue.js 官方文档](https://cn.vuejs.org/v2/guide/index.html)
-- [Vue.js 源码学习笔记](http://jiongks.name/blog/vue-code-review/) - 赵锦江（勾三股四）
-- [vue 源码解析系列](https://segmentfault.com/blog/fengruiabc) - fengruiabc
+如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看对比其它框架。
+
+[开始阅读](./SUMMARY.md)
