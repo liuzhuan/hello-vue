@@ -11,4 +11,5 @@
 - [vue-material](./content/vue-material/README.md)
 - [axios](./content/axios/README.md)
 - [Vue 2.0 源码解读](./content/vue@2.0-source/README.md)
+- [Vue Cheat Sheet](./content/vue-cheatsheet/README.md)
 - [参考资料](./references.md)
