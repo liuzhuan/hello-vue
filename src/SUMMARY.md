@@ -5,7 +5,7 @@
   - [条件与循环](./content/intro/condition-and-loops.md)
   - [处理用户输入](./content/intro/user-input.md)
   - [组件化应用构建](./content/intro/component-build.md)
-- [Vue 2.0](./content/vue@2.0/README.md)
+- [Vue 实例](./content/instance/README.md)
 - [vue-router](./content/vue-router/README.md)
 - [vuex](./content/vuex/README.md)
 - [vue-material](./content/vue-material/README.md)

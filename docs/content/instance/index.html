@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>介绍 · GitBook</title>
+        <title>Vue 实例 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="declarative-render.html" />
+    <link rel="next" href="../vue-router/" />
     
     
-    <link rel="prev" href="../../" />
+    <link rel="prev" href="../intro/component-build.html" />
     
 
     </head>
@@ -106,9 +106,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../intro/">
             
-                <a href="./">
+                <a href="../intro/">
             
                     
                     介绍
@@ -120,9 +120,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="declarative-render.html">
+        <li class="chapter " data-level="1.2.1" data-path="../intro/declarative-render.html">
             
-                <a href="declarative-render.html">
+                <a href="../intro/declarative-render.html">
             
                     
                     声明式渲染
@@ -133,9 +133,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="condition-and-loops.html">
+        <li class="chapter " data-level="1.2.2" data-path="../intro/condition-and-loops.html">
             
-                <a href="condition-and-loops.html">
+                <a href="../intro/condition-and-loops.html">
             
                     
                     条件与循环
@@ -146,9 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="user-input.html">
+        <li class="chapter " data-level="1.2.3" data-path="../intro/user-input.html">
             
-                <a href="user-input.html">
+                <a href="../intro/user-input.html">
             
                     
                     处理用户输入
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="component-build.html">
+        <li class="chapter " data-level="1.2.4" data-path="../intro/component-build.html">
             
-                <a href="component-build.html">
+                <a href="../intro/component-build.html">
             
                     
                     组件化应用构建
@@ -177,9 +177,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../instance/">
+        <li class="chapter active" data-level="1.3" data-path="./">
             
-                <a href="../instance/">
+                <a href="./">
             
                     
                     Vue 实例
@@ -311,7 +311,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >介绍</a>
+        <a href="../.." >Vue 实例</a>
     </h1>
 </div>
 
@@ -326,9 +326,50 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4ECB;&#x7ECD;">&#x4ECB;&#x7ECD;</h1>
-<p>&#x672C;&#x7AE0;&#x8282;&#x7684;&#x6240;&#x6709;&#x4F8B;&#x5B50;&#xFF0C;&#x90FD;&#x53EF;&#x5728; jsbin.com &#x5728;&#x7EBF;&#x8FD0;&#x884C;&#x3002;</p>
-<p>&#x6253;&#x5F00; jsbin &#x540E;&#xFF0C;&#x9009;&#x62E9; <code>Add library</code>&#xFF0C;&#x5F39;&#x51FA;&#x83DC;&#x5355;&#x4E2D;&#x9009;&#x62E9; <code>Vue.js 2.0.3</code> &#x5373;&#x53EF;&#x3002;</p>
+                                <h1 id="vue-&#x5B9E;&#x4F8B;">Vue &#x5B9E;&#x4F8B;</h1>
+<h2 id="&#x521B;&#x5EFA;">&#x521B;&#x5EFA;</h2>
+<p>Vue &#x7CFB;&#x5E94;&#x7528;&#x987B;&#x4EE5; <code>Vue</code> &#x51FD;&#x6570;&#x5F00;&#x542F;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  <span class="hljs-comment">// options</span>
+})
+</code></pre>
+<p>&#x521B;&#x5EFA; Vue &#x5B9E;&#x4F8B;&#x540E;&#xFF0C;&#x53EF;&#x4F20;&#x5165; options &#x9009;&#x9879;&#x3002;&#x6240;&#x6709;&#x9009;&#x9879;&#x53C2;&#x6570;<a href="https://vuejs.org/v2/api/#Options-Data" target="_blank">&#x89C1;&#x6B64;</a>&#x3002;</p>
+<p>Vue &#x7CFB;&#x5E94;&#x7528;&#x5305;&#x542B;&#x4E00;&#x4E2A; <strong>root Vue</strong> &#x5B9E;&#x4F8B;&#xFF0C;&#x4EE5; <code>new Vue</code> &#x521B;&#x5EFA;&#x3002;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x5D4C;&#x5957;&#x7684;&#xFF0C;&#x53EF;&#x590D;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A; todo &#x5E94;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x6811;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>Root Instance
++-- TodoList
+  +-- TodoItem
+  | +-- DeleteTodoButton
+  | +-- EditTodoButton
+  +-- TodoListFooter
+    +-- ClearTodosButton
+    +-- TodoListStatistics
+</code></pre><p>Vue &#x7EC4;&#x4EF6;&#x4EA6;&#x4E3A; Vue &#x5B9E;&#x4F8B;&#xFF0C;&#x4E24;&#x8005;&#x9009;&#x9879;&#x53C2;&#x6570;&#x5927;&#x90E8;&#x76F8;&#x540C;&#xFF0C;&#x4EC5;&#x6709;&#x4E9B;&#x8BB8;&#x9009;&#x9879;&#x53EA;&#x53EF;&#x4E3A; root Vue &#x5B9E;&#x4F8B;&#x53EF;&#x7528;&#x3002;</p>
+<h2 id="&#x6570;&#x636E;&#x548C;&#x65B9;&#x6CD5;">&#x6570;&#x636E;&#x548C;&#x65B9;&#x6CD5;</h2>
+<p>&#x521B;&#x5EFA; Vue &#x5B9E;&#x4F8B;&#x540E;&#xFF0C;<code>data</code> &#x9009;&#x9879;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x5747;&#x81EA;&#x52A8;&#x52A0;&#x5165; Vue &#x7684;<strong>&#x54CD;&#x5E94;&#x5F0F;&#x7CFB;&#x7EDF;</strong>&#x3002;&#x5F53;&#x8FD9;&#x4E9B;&#x6570;&#x503C;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x89C6;&#x56FE;&#x4F1A;&#x968F;&#x4E4B;&#x5237;&#x65B0;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> data = { a: <span class="hljs-number">1</span> }
+
+<span class="hljs-comment">// The object is added to a Vue instance</span>
+<span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  data: data
+})
+
+<span class="hljs-comment">// These reference the same object!</span>
+vm.a === data.a <span class="hljs-comment">// =&gt; true</span>
+
+<span class="hljs-comment">// Setting the property on the instance</span>
+<span class="hljs-comment">// also affects the original data</span>
+vm.a = <span class="hljs-number">2</span>
+data.a <span class="hljs-comment">// =&gt; 2</span>
+
+<span class="hljs-comment">// ... and vice-versa</span>
+data.a = <span class="hljs-number">3</span>
+vm.a <span class="hljs-comment">// =&gt; 3</span>
+</code></pre>
+<h2 id="ref">REF</h2>
+<ul>
+<li><a href="https://vuejs.org/v2/guide/instance.html" target="_blank">The Vue Instance</a></li>
+<li><a href="https://vuejs.org/v2/api/#Options-Data" target="_blank">Options - Data</a></li>
+</ul>
 
                                 
                                 </section>
@@ -356,12 +397,12 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../intro/component-build.html" class="navigation navigation-prev " aria-label="Previous page: 组件化应用构建">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="declarative-render.html" class="navigation navigation-next " aria-label="Next page: 声明式渲染">
+                <a href="../vue-router/" class="navigation navigation-next " aria-label="Next page: vue-router">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -372,7 +413,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.2","depth":1,"next":{"title":"声明式渲染","level":"1.2.1","depth":2,"path":"content/intro/declarative-render.md","ref":"./content/intro/declarative-render.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"content/intro/README.md","mtime":"2018-01-14T12:36:54.019Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-14T14:58:54.996Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue 实例","level":"1.3","depth":1,"next":{"title":"vue-router","level":"1.4","depth":1,"path":"content/vue-router/README.md","ref":"./content/vue-router/README.md","articles":[]},"previous":{"title":"组件化应用构建","level":"1.2.4","depth":2,"path":"content/intro/component-build.md","ref":"./content/intro/component-build.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"content/instance/README.md","mtime":"2018-01-14T14:24:13.468Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-14T14:58:54.996Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
