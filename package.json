@@ -1,0 +1,21 @@
+{
+  "name": "hello-vue",
+  "version": "1.0.0",
+  "description": "a vue.js primer",
+  "main": "n/a",
+  "scripts": {
+    "dev": "gitbook serve ./ docs",
+    "build": "gitbook build ./ docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuzhuan/hello-vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuzhuan/hello-vue/issues"
+  },
+  "homepage": "https://github.com/liuzhuan/hello-vue#readme"
+}
