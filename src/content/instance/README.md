@@ -52,6 +52,68 @@ data.a = 3
 vm.a // => 3
 ```
 
+数据变化，视图重新渲染。注意，只有实例创建时 `data` 的属性是响应式的。如果你在后期增加属性：
+
+```js
+vm.b = 'hi'
+```
+
+`b` 的改变无法触发任何视图的渲染。如果后期需要某些参数，可以设定初始值：
+
+```js
+data: {
+  newTodoText: '',
+  visitCount: 0,
+  hideCompletedTodos: false,
+  todos: [],
+  error: null
+}
+```
+
+当对象被 `Object.freeze()` 冻结后，响应式系统会失灵。比如：
+
+```js
+var obj = {
+  foo: 'bar'
+}
+
+Object.freeze(obj)
+
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      obj
+    }
+  }
+})
+```
+
+```html
+<div id="app">
+  <p>{{ obj.foo }}</p>
+  <!-- 点击按钮并不会导致视图刷新 -->
+  <button @click="obj.foo = 'baz'">Change it</buton>
+</div>
+```
+
+除 `data` 属性外，Vue 实例还暴露一些其他的属性和方法。它们以 `$` 开头，方便与用户定义的数据作区分。比如：
+
+```js
+var data = { a: 1 }
+var vm = new Vue({
+  el: '#example',
+  data: data
+})
+
+vm.$data === data // => true
+vm.$el === document.getElementById('example') // => true
+
+vm.$watch('a', function(newValue, oldValue) {
+  // 当 a 属性变化时被调用。
+})
+```
+
 ## REF
 
 - [The Vue Instance][instance]
