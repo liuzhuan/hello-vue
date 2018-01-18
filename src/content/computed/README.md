@@ -162,13 +162,21 @@ var watchExampleVM = new Vue({
 
         this.answer = 'Thinking...'
         var vm = this
-        axios.
+        axios.get('https://yesno.wtf/api')
+          .then(function(response){
+            vm.answer = _.capitalize(response.data.answer)
+          })
+          .catch(function(error) {
+            vm.answer = 'Error! Could not reach the API. ' + error
+          })
       },
       500
     )
   }
 })
 ```
+
+除了使用 `watch` 选项，也可以使用命令式的 `vm.$watch` API。
 
 ## REF
 

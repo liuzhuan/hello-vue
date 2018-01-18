@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../vue-router/" />
+    <link rel="next" href="../template/" />
     
     
     <link rel="prev" href="../intro/component-build.html" />
@@ -190,7 +190,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../vue-router/">
+        <li class="chapter " data-level="1.4" data-path="../template/">
+            
+                <a href="../template/">
+            
+                    
+                    模板语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../computed/">
+            
+                <a href="../computed/">
+            
+                    
+                    计算属性和观察者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../vue-router/">
             
                 <a href="../vue-router/">
             
@@ -203,7 +229,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../vuex/">
+        <li class="chapter " data-level="1.7" data-path="../vuex/">
             
                 <a href="../vuex/">
             
@@ -216,7 +242,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../vue-material/">
+        <li class="chapter " data-level="1.8" data-path="../vue-material/">
             
                 <a href="../vue-material/">
             
@@ -229,7 +255,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../axios/">
+        <li class="chapter " data-level="1.9" data-path="../axios/">
             
                 <a href="../axios/">
             
@@ -242,7 +268,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../vue@2.0-source/">
+        <li class="chapter " data-level="1.10" data-path="../vue@2.0-source/">
             
                 <a href="../vue@2.0-source/">
             
@@ -255,7 +281,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../vue-cheatsheet/">
+        <li class="chapter " data-level="1.11" data-path="../vue-cheatsheet/">
             
                 <a href="../vue-cheatsheet/">
             
@@ -268,7 +294,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="../../references.html">
+        <li class="chapter " data-level="1.12" data-path="../../references.html">
             
                 <a href="../../references.html">
             
@@ -365,6 +391,71 @@ data.a <span class="hljs-comment">// =&gt; 2</span>
 data.a = <span class="hljs-number">3</span>
 vm.a <span class="hljs-comment">// =&gt; 3</span>
 </code></pre>
+<p>&#x6570;&#x636E;&#x53D8;&#x5316;&#xFF0C;&#x89C6;&#x56FE;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x53EA;&#x6709;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x65F6; <code>data</code> &#x7684;&#x5C5E;&#x6027;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5728;&#x540E;&#x671F;&#x589E;&#x52A0;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-js">vm.b = <span class="hljs-string">&apos;hi&apos;</span>
+</code></pre>
+<p><code>b</code> &#x7684;&#x6539;&#x53D8;&#x65E0;&#x6CD5;&#x89E6;&#x53D1;&#x4EFB;&#x4F55;&#x89C6;&#x56FE;&#x7684;&#x6E32;&#x67D3;&#x3002;&#x5982;&#x679C;&#x540E;&#x671F;&#x9700;&#x8981;&#x67D0;&#x4E9B;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x521D;&#x59CB;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-js">data: {
+  newTodoText: <span class="hljs-string">&apos;&apos;</span>,
+  visitCount: <span class="hljs-number">0</span>,
+  hideCompletedTodos: <span class="hljs-literal">false</span>,
+  todos: [],
+  error: <span class="hljs-literal">null</span>
+}
+</code></pre>
+<p>&#x5F53;&#x5BF9;&#x8C61;&#x88AB; <code>Object.freeze()</code> &#x51BB;&#x7ED3;&#x540E;&#xFF0C;&#x54CD;&#x5E94;&#x5F0F;&#x7CFB;&#x7EDF;&#x4F1A;&#x5931;&#x7075;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> obj = {
+  foo: <span class="hljs-string">&apos;bar&apos;</span>
+}
+
+<span class="hljs-built_in">Object</span>.freeze(obj)
+
+<span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&apos;#app&apos;</span>,
+  data() {
+    <span class="hljs-keyword">return</span> {
+      obj
+    }
+  }
+})
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ obj.foo }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- &#x70B9;&#x51FB;&#x6309;&#x94AE;&#x5E76;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x89C6;&#x56FE;&#x5237;&#x65B0; --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;obj.foo = &apos;baz&apos;&quot;</span>&gt;</span>Change it<span class="hljs-tag">&lt;/<span class="hljs-name">buton</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x9664; <code>data</code> &#x5C5E;&#x6027;&#x5916;&#xFF0C;Vue &#x5B9E;&#x4F8B;&#x8FD8;&#x66B4;&#x9732;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x3002;&#x5B83;&#x4EEC;&#x4EE5; <code>$</code> &#x5F00;&#x5934;&#xFF0C;&#x65B9;&#x4FBF;&#x4E0E;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x533A;&#x5206;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> data = { a: <span class="hljs-number">1</span> }
+<span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&apos;#example&apos;</span>,
+  data: data
+})
+
+vm.$data === data <span class="hljs-comment">// =&gt; true</span>
+vm.$el === <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;example&apos;</span>) <span class="hljs-comment">// =&gt; true</span>
+
+vm.$watch(<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newValue, oldValue</span>) </span>{
+  <span class="hljs-comment">// &#x5F53; a &#x5C5E;&#x6027;&#x53D8;&#x5316;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#x3002;</span>
+})
+</code></pre>
+<h2 id="&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;">&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</h2>
+<p>&#x6BCF;&#x4E2A; Vue &#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x65F6;&#x90FD;&#x4F1A;&#x7ECF;&#x5386;&#x4E00;&#x7CFB;&#x5217;&#x521D;&#x59CB;&#x5316;&#x6B65;&#x9AA4;&#xFF0C;&#x6BD4;&#x5982;&#x8BBE;&#x5B9A;&#x6570;&#x636E;&#x89C2;&#x5BDF;&#xFF0C;&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#xFF0C;&#x628A;&#x5B9E;&#x4F8B;&#x52A0;&#x8F7D;&#x5230; DOM&#xFF0C;&#x6570;&#x636E;&#x53D8;&#x5316;&#x65F6;&#x66F4;&#x65B0; DOM &#x7B49;&#x3002;&#x5728;&#x8FD9;&#x4E9B;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;Vue &#x4F1A;&#x5728;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x8282;&#x70B9;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#xFF0C;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x201D;&#xFF08;<code>lifecycle hooks</code>&#xFF09;&#xFF0C;&#x7528;&#x6237;&#x6709;&#x673A;&#x4F1A;&#x5728;&#x5176;&#x4E2D;&#x52A0;&#x5165;&#x81EA;&#x5B9A;&#x4E49;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;<code>created</code> &#x94A9;&#x5B50;&#x53EF;&#x5728;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x540E;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">new</span> Vue({
+  data: {
+    a: <span class="hljs-number">1</span>
+  },
+  created: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// this &#x6307;&#x5411;&#x65B0;&#x521B;&#x5EFA;&#x7684; vm &#x5B9E;&#x4F8B;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;a is: &apos;</span> + <span class="hljs-keyword">this</span>.a)
+  }
+})
+</code></pre>
+<p>&#x5176;&#x4ED6;&#x9636;&#x6BB5;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x53EF;&#x4F9B;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982; <code>mounted</code>, <code>updated</code>, <code>destroyed</code> &#x7B49;&#x3002;&#x6240;&#x6709;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x7684; <code>this</code> &#x90FD;&#x6307;&#x5411;&#x65B0;&#x521B;&#x5EFA;&#x7684; Vue &#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x26A0;&#xFE0F; &#x6CE8;&#x610F;&#xFF1A;<strong>&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x94A9;&#x5B50;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</strong>&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<code>created: () =&gt; console.log(this.a)</code> &#x6216; <code>vm.$watch(&apos;a&apos;, newValue =&gt; this.myMethod())</code>&#x3002;&#x56E0;&#x4E3A;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7ED1;&#x5B9A;&#x5728;&#x7236;&#x7EA7;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;<code>this</code> &#x4E0D;&#x4F1A;&#x6307;&#x5411;&#x671F;&#x671B;&#x7684; Vue &#x5B9E;&#x4F8B;&#xFF0C;&#x7ECF;&#x5E38;&#x5BFC;&#x81F4;&#x5982;&#x4E0B;&#x9519;&#x8BEF;&#xFF1A;<code>Uncaught TypeError: Cannot read property of undefined</code> &#x6216; <code>Uncaught TypeError: this.myMethod is not a function</code>&#x3002;</p>
+<h2 id="&#x751F;&#x547D;&#x5468;&#x671F;&#x6D41;&#x7A0B;&#x56FE;">&#x751F;&#x547D;&#x5468;&#x671F;&#x6D41;&#x7A0B;&#x56FE;</h2>
+<p><img src="https://vuejs.org/images/lifecycle.png" alt="lifecycle diagram"></p>
 <h2 id="ref">REF</h2>
 <ul>
 <li><a href="https://vuejs.org/v2/guide/instance.html" target="_blank">The Vue Instance</a></li>
@@ -402,7 +493,7 @@ vm.a <span class="hljs-comment">// =&gt; 3</span>
                 </a>
                 
                 
-                <a href="../vue-router/" class="navigation navigation-next " aria-label="Next page: vue-router">
+                <a href="../template/" class="navigation navigation-next " aria-label="Next page: 模板语法">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -413,7 +504,7 @@ vm.a <span class="hljs-comment">// =&gt; 3</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue 实例","level":"1.3","depth":1,"next":{"title":"vue-router","level":"1.4","depth":1,"path":"content/vue-router/README.md","ref":"./content/vue-router/README.md","articles":[]},"previous":{"title":"组件化应用构建","level":"1.2.4","depth":2,"path":"content/intro/component-build.md","ref":"./content/intro/component-build.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"content/instance/README.md","mtime":"2018-01-14T14:24:13.468Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-14T14:58:54.996Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue 实例","level":"1.3","depth":1,"next":{"title":"模板语法","level":"1.4","depth":1,"path":"content/template/README.md","ref":"./content/template/README.md","articles":[]},"previous":{"title":"组件化应用构建","level":"1.2.4","depth":2,"path":"content/intro/component-build.md","ref":"./content/intro/component-build.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"content/instance/README.md","mtime":"2018-01-18T15:18:38.626Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T15:36:48.739Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

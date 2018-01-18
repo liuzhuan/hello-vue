@@ -1,0 +1,579 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>计算属性和观察者 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../vue-router/" />
+    
+    
+    <link rel="prev" href="../template/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/declarative-render.html">
+            
+                <a href="../intro/declarative-render.html">
+            
+                    
+                    声明式渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/condition-and-loops.html">
+            
+                <a href="../intro/condition-and-loops.html">
+            
+                    
+                    条件与循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../intro/user-input.html">
+            
+                <a href="../intro/user-input.html">
+            
+                    
+                    处理用户输入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../intro/component-build.html">
+            
+                <a href="../intro/component-build.html">
+            
+                    
+                    组件化应用构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../instance/">
+            
+                <a href="../instance/">
+            
+                    
+                    Vue 实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../template/">
+            
+                <a href="../template/">
+            
+                    
+                    模板语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    计算属性和观察者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../vue-router/">
+            
+                <a href="../vue-router/">
+            
+                    
+                    vue-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vuex/">
+            
+                <a href="../vuex/">
+            
+                    
+                    vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vue-material/">
+            
+                <a href="../vue-material/">
+            
+                    
+                    vue-material
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../axios/">
+            
+                <a href="../axios/">
+            
+                    
+                    axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../vue@2.0-source/">
+            
+                <a href="../vue@2.0-source/">
+            
+                    
+                    Vue 2.0 源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../vue-cheatsheet/">
+            
+                <a href="../vue-cheatsheet/">
+            
+                    
+                    Vue Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../references.html">
+            
+                <a href="../../references.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >计算属性和观察者</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x548C;&#x89C2;&#x5BDF;&#x8005;">&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x548C;&#x89C2;&#x5BDF;&#x8005;</h1>
+<h2 id="&#x8BA1;&#x7B97;&#x5C5E;&#x6027;">&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</h2>
+<p>&#x6A21;&#x677F;&#x5185;&#x5D4C;&#x8868;&#x8FBE;&#x5F0F;&#x867D;&#x7136;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x4EC5;&#x9002;&#x5408;&#x7B80;&#x5355;&#x8FD0;&#x7B97;&#x3002;&#x903B;&#x8F91;&#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x4E0D;&#x6613;&#x7EF4;&#x62A4;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span>
+  {{ message.split(&apos;&apos;).reverse().join(&apos;&apos;) }}
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x903B;&#x8F91;&#xFF0C;&#x5F0A;&#x7AEF;&#x6709;&#x4E8C;&#xFF1A;&#x4E0D;&#x6613;&#x5F04;&#x61C2;&#x5176;&#x903B;&#x8F91;&#xFF1B;&#x4E0D;&#x4FBF;&#x591A;&#x6B21;&#x590D;&#x7528;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x590D;&#x6742;&#x903B;&#x8F91;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF08;<code>computed property</code>&#xFF09;&#x3002;</p>
+<p><strong>&#x7B80;&#x5355;&#x4F8B;&#x5B50;</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Original message: &quot;{{ message }}&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Computed reversed message: &quot;{{ reversedMessage }}&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&apos;#example&apos;</span>,
+  data: {
+    message: <span class="hljs-string">&apos;Hello&apos;</span>
+  },
+  computed: {
+    reversedMessage: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.message.split(<span class="hljs-string">&apos;&apos;</span>).reverse().join(<span class="hljs-string">&apos;&apos;</span>)
+    }
+  }
+})
+</code></pre>
+<p><strong>&#x8BA1;&#x7B97;&#x5C5E;&#x6027; vs &#x65B9;&#x6CD5;</strong></p>
+<p>&#x4ECE;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x4E0A;&#x770B;&#xFF0C;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x3002;&#x552F;&#x4E00;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x662F;&#x7F13;&#x5B58;&#x7684;&#x3002;&#x53EA;&#x8981;&#x5B83;&#x4F9D;&#x8D56;&#x7684;&#x5C5E;&#x6027;&#x4E0D;&#x53D8;&#xFF0C;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5982;&#x4E0B;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E0D;&#x4F1A;&#x66F4;&#x65B0;&#xFF0C;&#x56E0;&#x4E3A; <code>Date.now()</code> &#x4E0D;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-js">computed: {
+  now: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Date</span>.now()
+  }
+}
+</code></pre>
+<h2 id="&#x8BA1;&#x7B97;&#x5C5E;&#x6027;-vs-&#x88AB;&#x89C2;&#x5BDF;&#x5C5E;&#x6027;"><strong>&#x8BA1;&#x7B97;&#x5C5E;&#x6027; vs &#x88AB;&#x89C2;&#x5BDF;&#x5C5E;&#x6027;</strong></h2>
+<p>Vue &#x786E;&#x5B9E;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x901A;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x89C2;&#x5BDF; Vue &#x5B9E;&#x4F8B;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x5E76;&#x5BF9;&#x5176;&#x53D8;&#x5316;&#x4F5C;&#x76F8;&#x5E94;&#xFF1A;&#x89C2;&#x5BDF;&#x5C5E;&#x6027;&#xFF08;<code>watch properties</code>&#xFF09;&#x3002;&#x89C2;&#x5BDF;&#x5C5E;&#x6027;&#x5BB9;&#x6613;&#x88AB;&#x6EE5;&#x7528;&#xFF0C;&#x5C24;&#x5176; Angular &#x4EBA;&#x58EB;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x66F4;&#x4F73;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span>{{ fullName }}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&apos;#demo&apos;</span>,
+  data: {
+    firstName: <span class="hljs-string">&apos;Foo&apos;</span>,
+    lastName: <span class="hljs-string">&apos;Bar&apos;</span>,
+    fullName: <span class="hljs-string">&apos;Foo Bar&apos;</span>
+  }, 
+
+  watch: {
+    firstName: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>) </span>{
+      <span class="hljs-keyword">this</span>.fullName = val + <span class="hljs-string">&apos; &apos;</span> + <span class="hljs-keyword">this</span>.lastName
+    },
+
+    lastName: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>) </span>{
+      <span class="hljs-keyword">this</span>.fullName = <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">&apos; &apos;</span> + val
+    }
+  }
+})
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x662F;&#x547D;&#x4EE4;&#x5F0F;&#x4E14;&#x91CD;&#x590D;&#xFF0C;&#x4E0E;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7248;&#x672C;&#x505A;&#x6BD4;&#x8F83;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&apos;#demo&apos;</span>,
+  data: {
+    firstName: <span class="hljs-string">&apos;Foo&apos;</span>,
+    lastName: <span class="hljs-string">&apos;Bar&apos;</span>
+  },
+  computed: {
+    fullName: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">&apos; &apos;</span> + <span class="hljs-keyword">this</span>.lastName
+    }
+  }
+})
+</code></pre>
+<p><strong>&#x8BA1;&#x7B97; Setter</strong></p>
+<p>&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#x9ED8;&#x8BA4;&#x53EA;&#x8BFB;&#xFF0C;&#x82E5;&#x8981;&#x9700;&#x8981;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5176;&#x53EF;&#x5199;&#xFF1A;</p>
+<pre><code class="lang-js">computed: {
+  fullName: {
+    get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.fullName + <span class="hljs-string">&apos; &apos;</span> + <span class="hljs-keyword">this</span>.lastName
+    },
+
+    set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newValue</span>) </span>{
+      <span class="hljs-keyword">var</span> names = newValue.split(<span class="hljs-string">&apos; &apos;</span>)
+      <span class="hljs-keyword">this</span>.firstName = names[<span class="hljs-number">0</span>]
+      <span class="hljs-keyword">this</span>.lastName = names[names.length - <span class="hljs-number">1</span>]
+    }
+  }
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x5F53;&#x4F60;&#x6267;&#x884C; <code>vm.fullName = &apos;John Doe&apos;</code> &#x65F6;&#xFF0C;&#x4F1A;&#x5524;&#x8D77; setter &#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0; <code>vm.firstName</code> &#x548C; <code>vm.lastName</code> &#x3002;</p>
+<h2 id="&#x89C2;&#x5BDF;&#x8005;">&#x89C2;&#x5BDF;&#x8005;</h2>
+<p>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x53EF;&#x6EE1;&#x8DB3;&#x5927;&#x591A;&#x6570;&#x573A;&#x666F;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;&#x8FD9;&#x4E5F;&#x662F; Vue &#x63D0;&#x4F9B;&#x901A;&#x7528;&#x54CD;&#x5E94;&#x9009;&#x9879; <code>watch</code> &#x7684;&#x539F;&#x56E0;&#x3002;&#x4E00;&#x822C;&#x9002;&#x5408;&#x5904;&#x7406;&#x5F02;&#x6B65;&#x56DE;&#x8C03;&#x6216;&#x8BA1;&#x7B97;&#x91CF;&#x590D;&#x6742;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;watch-example&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Ask a yes/no question:
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;question&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{ answer }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> watchExampleVM = <span class="hljs-keyword">new</span> Vue({
+  el: <span class="hljs-string">&apos;#watch-example&apos;</span>,
+  data: {
+    question: <span class="hljs-string">&apos;&apos;</span>,
+    answer: <span class="hljs-string">&apos;I cannot give you an answer until you ask a question!&apos;</span>
+  },
+  watch: {
+    question: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newQuestion, oldQuestion</span>) </span>{
+      <span class="hljs-keyword">this</span>.answer = <span class="hljs-string">&apos;Waiting for you to stop typing...&apos;</span>
+      <span class="hljs-keyword">this</span>.getAnswer()
+    }
+  },
+
+  methods: {
+    getAnswer: _.debounce(
+      <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.question.indexOf(<span class="hljs-string">&apos;?&apos;</span>) === <span class="hljs-number">-1</span>) {
+          <span class="hljs-keyword">this</span>.answer = <span class="hljs-string">&apos;Questions usually contain a question mask. ;-)&apos;</span>
+          <span class="hljs-keyword">return</span>
+        }
+
+        <span class="hljs-keyword">this</span>.answer = <span class="hljs-string">&apos;Thinking...&apos;</span>
+        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+        axios.get(<span class="hljs-string">&apos;https://yesno.wtf/api&apos;</span>)
+          .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>)</span>{
+            vm.answer = _.capitalize(response.data.answer)
+          })
+          .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+            vm.answer = <span class="hljs-string">&apos;Error! Could not reach the API. &apos;</span> + error
+          })
+      },
+      <span class="hljs-number">500</span>
+    )
+  }
+})
+</code></pre>
+<p>&#x9664;&#x4E86;&#x4F7F;&#x7528; <code>watch</code> &#x9009;&#x9879;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x5F0F;&#x7684; <code>vm.$watch</code> API&#x3002;</p>
+<h2 id="ref">REF</h2>
+<ul>
+<li><a href="https://vuejs.org/v2/guide/computed.html" target="_blank">Computed Properties and Watchers</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../template/" class="navigation navigation-prev " aria-label="Previous page: 模板语法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../vue-router/" class="navigation navigation-next " aria-label="Next page: vue-router">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"计算属性和观察者","level":"1.5","depth":1,"next":{"title":"vue-router","level":"1.6","depth":1,"path":"content/vue-router/README.md","ref":"./content/vue-router/README.md","articles":[]},"previous":{"title":"模板语法","level":"1.4","depth":1,"path":"content/template/README.md","ref":"./content/template/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"content/computed/README.md","mtime":"2018-01-18T15:36:41.296Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T15:36:48.739Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
