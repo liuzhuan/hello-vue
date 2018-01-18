@@ -6,6 +6,7 @@
   - [处理用户输入](./content/intro/user-input.md)
   - [组件化应用构建](./content/intro/component-build.md)
 - [Vue 实例](./content/instance/README.md)
+- [模板语法](./content/template/README.md)
 - [vue-router](./content/vue-router/README.md)
 - [vuex](./content/vuex/README.md)
 - [vue-material](./content/vue-material/README.md)

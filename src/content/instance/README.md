@@ -114,6 +114,32 @@ vm.$watch('a', function(newValue, oldValue) {
 })
 ```
 
+## 实例生命周期钩子
+
+每个 Vue 实例创建时都会经历一系列初始化步骤，比如设定数据观察，编译模板，把实例加载到 DOM，数据变化时更新 DOM 等。在这些过程中，Vue 会在特定时间节点执行一些函数，称之为“生命周期钩子函数”（`lifecycle hooks`），用户有机会在其中加入自定义代码。
+
+比如，`created` 钩子可在实例创建后调用：
+
+```js
+new Vue({
+  data: {
+    a: 1
+  },
+  created: function() {
+    // this 指向新创建的 vm 实例
+    console.log('a is: ' + this.a)
+  }
+})
+```
+
+其他阶段还有其他的钩子函数可供使用，比如 `mounted`, `updated`, `destroyed` 等。所有的钩子函数的 `this` 都指向新创建的 Vue 实例。
+
+⚠️ 注意：**不要使用箭头函数作为钩子的回调函数**，比如：`created: () => console.log(this.a)` 或 `vm.$watch('a', newValue => this.myMethod())`。因为箭头函数绑定在父级上下文，`this` 不会指向期望的 Vue 实例，经常导致如下错误：`Uncaught TypeError: Cannot read property of undefined` 或 `Uncaught TypeError: this.myMethod is not a function`。
+
+## 生命周期流程图
+
+![lifecycle diagram](https://vuejs.org/images/lifecycle.png)
+
 ## REF
 
 - [The Vue Instance][instance]
