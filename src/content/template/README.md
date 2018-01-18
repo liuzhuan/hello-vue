@@ -62,6 +62,52 @@ Vue.js 的数据绑定支持所有的 JavaScript 表达式功能：
 <div v-bind:id="'list-' + id"></div>
 ```
 
+⚠️ 注意：模板表达式在沙箱中运行，只能访问白名单全局变量，比如 `Math` 和 `Date` 等。不可以访问用户定义的全局变量。
+
+## 指令
+
+指令是以 `v-` 开头的特殊属性，其值应该是一条 JS 表达式（`v-for` 例外）。指令的指责是对 DOM 施加作用。比如：
+
+```html
+<p v-if="seen">Now you see me</p>
+```
+
+**参数**
+
+有些指令可以有参数，在指令名之后添加冒号即可。比如，`v-bind` 指令用来响应式的刷新一个 HTML 属性：
+
+```html
+<a v-bind:href="url">...</a>
+```
+
+另一个例子是 `v-on` 指令，用来监听 DOM 事件：
+
+```html
+<a v-on:click="doSomething">...</a>
+```
+
+**修饰器**
+
+修饰器是一种特殊后缀，使用 `.` 标示。用来指示指令应该绑定到一些特殊方式。比如，`.prevent` 修饰器告诉 `v-on` 指令在事件中执行 `event.preventDefault()`。
+
+```html
+<form v-on:submit.prevent="onSubmit">...</form>
+```
+
+## 缩写形式
+
+`v-` 前缀用作标示 Vue 相关属性的视觉提示。Vue.js 提供了 `v-bind` 和 `v-on` 两者的缩写形式：
+
+```html
+<!-- v-bind 语法 -->
+<a v-bind:href="url"> ... </a>
+<a :href="url"> ... </a>
+
+<!-- v-on 语法 -->
+<a v-on:click="doSomething"> ... </a>
+<a @click="doSomething"> ... </a>
+```
+
 ## REF
 
 - [Template Syntax][tpl]

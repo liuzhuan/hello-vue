@@ -7,6 +7,7 @@
   - [组件化应用构建](./content/intro/component-build.md)
 - [Vue 实例](./content/instance/README.md)
 - [模板语法](./content/template/README.md)
+- [计算属性和观察者](./content/computed/README.md)
 - [vue-router](./content/vue-router/README.md)
 - [vuex](./content/vuex/README.md)
 - [vue-material](./content/vue-material/README.md)
