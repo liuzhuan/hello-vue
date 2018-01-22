@@ -155,6 +155,18 @@ data: {
 
 对象语法通常和计算属性一起使用。
 
+### 数组语法
+
+`v-bind:style` 的数组语法可以向同一个元素施加多个样式：
+
+```html
+<div v-bind:style="[baseStyles, overridingStyles]"></div>
+```
+
+### 自动前缀
+
+当使用的 `v-bind:style` 属性需要浏览器引擎前缀时，比如 `transform`，Vue 会自动  t
+
 ## REF
 
 - [Class and Style Bindings][guide]
