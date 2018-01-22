@@ -125,7 +125,35 @@ Vue.component('my-component', {
 
 ### 对象语法
 
-To Be Continue...
+`v-bind:style` 的对象语法十分简单 - 看起来像 CSS，实际上是 JavaScript 对象。CSS 属性名称可以使用驼峰语法或连线格式。
+
+```html
+<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+```
+
+```js
+data: {
+  activeColor: 'red',
+  fontSize: 30
+}
+```
+
+通常建议直接绑定样式对象，这样模板更清晰：
+
+```html
+<div v-bind:style="styleObject"></div>
+```
+
+```js
+data: {
+  styleObject: {
+    color: 'red',
+    fontSize: '13px'
+  }
+}
+```
+
+对象语法通常和计算属性一起使用。
 
 ## REF
 
