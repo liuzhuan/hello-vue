@@ -9,6 +9,8 @@
 - [模板语法](./content/template/README.md)
 - [计算属性和观察者](./content/computed/README.md)
 - [绑定类和样式](./guide/class-and-style.md)
+- [条件渲染](./guide/conditional.md)
+- [列表渲染](./guide/list.md)
 - [组件](./guide/components.md)
 - [vue-router](./content/vue-router/README.md)
 - [vuex](./content/vuex/README.md)

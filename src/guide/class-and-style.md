@@ -165,7 +165,17 @@ data: {
 
 ### 自动前缀
 
-当使用的 `v-bind:style` 属性需要浏览器引擎前缀时，比如 `transform`，Vue 会自动  t
+当使用的 `v-bind:style` 属性需要浏览器引擎前缀时，比如 `transform`，Vue 会自动检测属性，并添加合适的前缀。
+
+### 多个数值 （`2.3.0+`）
+
+从 2.3.0 开始，可以向 style 属性传递一个数组的前缀属性，比如：
+
+```html
+<div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+```
+
+这样只会渲染浏览器支持的最后一种属性。
 
 ## REF
 
