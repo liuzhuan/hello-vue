@@ -13,6 +13,7 @@
 - [列表渲染](./guide/list.md)
 - [组件](./guide/components.md)
 - [vue-cli](./vue-cli/README.md)
+  - [vue-cli 源码分析](./vue-cli/source.md)
 - [vue-router](./content/vue-router/README.md)
 - [vuex](./content/vuex/README.md)
 - [vue-material](./content/vue-material/README.md)
