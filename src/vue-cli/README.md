@@ -24,10 +24,20 @@ vue init webpack my-project
 
 上面命令从 [vuejs-templates/webpack][webpack] 拉取模板，提示一些信息，然后在 `./my-project/` 生成项目结构。
 
+然后就可以进入目录，进行开发了：
+
+```sh
+cd my-project
+npm install
+npm run dev
+```
+
 ## REF
 
 - [vue-cli @ github][cli]
 - [vuejs-templates][webpack]
+- [Webpack Template Gitbook][webpack-templates]
 
 [cli]: https://github.com/vuejs/vue-cli
 [webpack]: https://github.com/vuejs-templates/webpack
+[webpack-templates]: https://vuejs-templates.github.io/webpack/
