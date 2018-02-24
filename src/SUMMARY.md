@@ -14,6 +14,7 @@
 - [组件](./guide/components.md)
 - [vue-loader](./vue-loader/README.md)
 - [vue-cli](./vue-cli/README.md)
+  - [依赖分析](./vue-cli/dependencies.md)
   - [目录结构](./vue-cli/structure.md)
   - [vue-cli 源码分析](./vue-cli/source.md)
 - [vue-router](./content/vue-router/README.md)
