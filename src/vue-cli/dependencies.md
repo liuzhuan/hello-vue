@@ -6,6 +6,8 @@
 
 ![vue-cli devDependencies](../img/vue-cli-dev-dep.svg)
 
+> TODO: svg 图片太大 - 1.1MB，需要转换为 .png
+
 下面从易到难，依次对其做简单介绍。
 
 ## node-notifier
@@ -97,6 +99,38 @@ semver.valid(semver.coerce('v2')) // '2.0.0'
 semver.valid(semver.coerce('42.6.7.9.3-alpha')) // '42.6.7'
 ```
 
+## shelljs
+
+[`ShellJS`][shelljs] 是利用 Node.js API 实现的一套跨平台（Windows/Linux/OS X）的 Unix Shell 命令工具集。用法如下：
+
+```js
+var shell = require('shelljs')
+ 
+if (!shell.which('git')) {
+  shell.echo('Sorry, this script requires git')
+  shell.exit(1)
+}
+ 
+// Copy files to release dir
+shell.rm('-rf', 'out/Release')
+shell.cp('-R', 'stuff/', 'out/Release')
+ 
+// Replace macros in each .js file
+shell.cd('lib')
+shell.ls('*.js').forEach(function (file) {
+  shell.sed('-i', 'BUILD_VERSION', 'v0.1.2', file)
+  shell.sed('-i', /^.*REMOVE_THIS_LINE.*$/, '', file)
+  shell.sed('-i', /.*REPLACE_LINE_WITH_MACRO.*\n/, shell.cat('macro.js'), file)
+})
+shell.cd('..')
+ 
+// Run external tool synchronously
+if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
+  shell.echo('Error: Git commit failed')
+  shell.exit(1)
+}
+```
+
 ## REF
 
 [node-notifier]: https://www.npmjs.com/package/node-notifier
@@ -105,3 +139,4 @@ semver.valid(semver.coerce('42.6.7.9.3-alpha')) // '42.6.7'
 [portfinder]: https://www.npmjs.com/package/portfinder
 [rimraf]: https://www.npmjs.com/package/rimraf
 [semver]: https://www.npmjs.com/package/semver
+[shelljs]: https://www.npmjs.com/package/shelljs
