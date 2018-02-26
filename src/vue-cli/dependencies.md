@@ -4,9 +4,7 @@
 
 使用 `vue init webpack my-project` 生成项目脚手架之后，查看 `package.json` 文件，可以看到，`devDependencies` 有很多项目，分类整理后如下所示：
 
-![vue-cli devDependencies](../img/vue-cli-dev-dep.svg)
-
-> TODO: svg 图片太大 - 1.1MB，需要转换为 .png
+![vue-cli devDependencies](../img/vue-cli-dev-dep.png)
 
 下面从易到难，依次对其做简单介绍。
 
@@ -94,7 +92,7 @@ semver.valid('a.b.c') // null
 semver.clean('   =1.2.3   ') // '1.2.3'
 semver.satisfies('1.2.3', '1.x || >= 2.5.0 || 5.0.0 - 7.2.3') // true
 semver.gt('1.2.3', '9.8.7') // false
-semver.lt('1.2.3', '9.8.7') // true
+semver.lt('1.2.3', '9.8.7') // true　
 semver.valid(semver.coerce('v2')) // '2.0.0'
 semver.valid(semver.coerce('42.6.7.9.3-alpha')) // '42.6.7'
 ```
