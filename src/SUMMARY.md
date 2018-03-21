@@ -18,7 +18,10 @@
   - [scripts 脚本](./vue-cli/scripts.md)
   - [目录结构](./vue-cli/structure.md)
   - [vue-cli 源码分析](./vue-cli/source.md)
-- [vue-router](./content/vue-router/README.md)
+- vue-router
+  - [起步](./vue-router/getting-started.md)
+  - [动态路由匹配](./vue-router/dynamic-matching.md)
+  - [嵌套路由](./vue-router/nested-routes.md)
 - [vuex](./content/vuex/README.md)
 - [vue-material](./content/vue-material/README.md)
 - [axios](./content/axios/README.md)
