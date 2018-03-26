@@ -25,6 +25,7 @@
   - [程序跳转](./vue-router/navigation.md)
   - [命名路由](./vue-router/named-routes.md)
   - [命名视图](./vue-router/named-views.md)
+  - [重定向和别名](./vue-router/redirect-and-alias.md)
 - [vuex](./content/vuex/README.md)
 - [vue-material](./content/vue-material/README.md)
 - [axios](./content/axios/README.md)
