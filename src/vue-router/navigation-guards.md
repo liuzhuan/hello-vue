@@ -15,6 +15,12 @@ router.beforeEach((to, from, next) => {
 })
 ```
 
+全局的 `before` 守卫会在导航触发时，依据创建顺序调用。守卫可以异步解决，当所有的钩子解决完之前，导航处于**暂停（pending）**状态。
+
+每个守卫接收三个参数：
+
+- `to: Route` 即将导航进入的目标 `Route` 对象。
+
 ## REF
 
 - [Navigation Guards][nav-guard]
