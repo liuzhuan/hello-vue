@@ -35,4 +35,5 @@
 - [vuex](./vuex/README.md)
 - [axios](./axios/README.md)
 - [Vue 2.0 源码解读](./vue@2.0-source/README.md)
+- [API](./api/README.md)
 - [参考资料](./references.md)
