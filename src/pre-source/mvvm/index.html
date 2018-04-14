@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MVVM Demo</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ song }}</h1>
+    <p>{{ album.name }} is releasd by {{ singer }} at 2015/11.</p>
+    <p>Theme song is {{ album.theme }}</p>
+    <p>Lyricist is {{ singer }}.</p>
+    <input v-model="singer" type="text" />
+    <p><input v-model="a" type="text" /> + <input v-model="b" type="text" /> = {{ sum }}</p>
+  </div>
+  <script src="mvvm.js"></script>
+  <script>
+    let mvvm = new Mvvm({
+      el: '#app',
+      data: {
+        a: 1,
+        b: 2,
+        song: 'Snow',
+        album: {
+          name: 'Hello',
+          theme: 'world'
+        },
+        singer: 'Jack'
+      },
+      computed: {
+        sum() {
+          return Number(this.a) + Number(this.b)
+        },
+        noop () {}
+      },
+      mounted () {
+        setTimeout(() => {
+          console.log('All done!')
+        }, 1000)
+      }
+    })
+  </script>
+</body>
+</html>

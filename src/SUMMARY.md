@@ -34,6 +34,8 @@
   - [数据获取](./vue-router/data-fetching.md)
 - [vuex](./vuex/README.md)
 - [axios](./axios/README.md)
+- 源码阅读预备知识
+  - [MVVM 原理](./pre-source/mvvm/README.md)
 - [Vue 2.0 源码解读](./vue@2.0-source/README.md)
 - [API](./api/README.md)
 - [参考资料](./references.md)
