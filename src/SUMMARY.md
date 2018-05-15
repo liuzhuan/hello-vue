@@ -19,6 +19,7 @@
   - [插槽](./guide/components/slots.md)
   - [动态&异步组件](./guide/components/dynamic-async.md)
   - [边界条件](./guide/components/edge-cases.md)
+- [风格指南](./style-guide/README.md)
 - [vue-loader](./vue-loader/README.md)
 - [vue-cli](./vue-cli/README.md)
   - [依赖分析](./vue-cli/dependencies.md)
