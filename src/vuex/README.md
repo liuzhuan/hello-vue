@@ -232,6 +232,19 @@ computed: {
 }
 ```
 
+## 严格模式
+
+为了开启严格模式，只需要在创建 Vuex store 时传入 `strict: true` 即可：
+
+```js
+const store = new Vuex.Store({
+  // ...
+  strict: true
+})
+```
+
+严格模式下，每次使用非 mutation 钩子函数改变 Vuex 状态时，都会抛出异常。这就保证了所有的状态变更可以被调试工具显式跟踪。
+
 ## REF
 
 - [State Management][state]
