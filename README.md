@@ -1,3 +1,3 @@
-Hello Vue!
+# Hello Vue
 
-查看[目录](./src/SUMMARY.md)
+查看[基础知识](./src/SUMMARY.md)
