@@ -58,7 +58,7 @@ Vue.use(Vuex)
 
 ## 最简单的 Store
 
-创建 store 很简单，只需要提供一个初始的状态对象和一些变更函数即可：
+创建 store 很简单，只需要提供一个初始的 state 对象和一些 mutation：
 
 ```js
 const store = new Vuex.Store({
@@ -66,7 +66,7 @@ const store = new Vuex.Store({
     count: 0
   },
   mutations: {
-    increment(state) {
+    increment (state) {
       state.count++
     }
   }
@@ -79,6 +79,8 @@ const store = new Vuex.Store({
 store.commit('increment')
 console.log(store.state.count) // -> 1
 ```
+
+再次强调，我们通过提交 mutation 的方式，而非直接改变 `store.state.count`，是因为我们想要更明确地追踪到状态的变化。这个简单的约定能够让你的意图更加明显，这样你在阅读代码的时候能更容易地解读应用内部的状态改变。
 
 ## 核心概念
 
@@ -231,6 +233,130 @@ computed: {
   }
 }
 ```
+
+也可以让 getter 返回一个函数，来实现给 getter 传参。
+
+```js
+getters: {
+  // ...
+  getTodoById: (state) => (id) => {
+    return state.todos.find(todo => todo.id === id)
+  }
+}
+
+store.gettters.getTodoById(2)
+```
+
+`mapGetters` 辅助函数
+
+`mapGetters` 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：
+
+```js
+import { mapGetters } from 'vuex'
+
+export default {
+  // ...
+  computed: {
+    ...mapGetters([
+      'doneTodosCount',
+      'anotherGetter'
+    ])
+  }
+}
+```
+
+如果你想将一个 getter 属性另取一个名字，使用对象形式：
+
+```js
+mapGetters({
+  doneCount: 'doneTodosCount'
+})
+```
+
+### Mutation
+
+更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的**事件类型 (type)**和一个**回调函数 (handler)**。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数：
+
+```js
+const store = new Vuex.Store({
+  state: {
+    count: 1
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
+```
+
+你不能直接调用一个 mutation handler。这个选项更像是事件注册：“当触发一个类型为 increment 的 mutation 时，调用此函数。”要唤醒一个 mutation handler，你需要以相应的 type 调用 store.commit 方法：
+
+```js
+store.commit('increment')
+```
+
+提交载荷（Payload）
+
+你可以向 store.commit 传入额外的参数，即 mutation 的 载荷（payload）：
+
+```js
+// ...
+mutations: {
+  increment (state, n) {
+    state.count += n
+  }
+}
+
+store.commit('increment', 10)
+```
+
+在大多数情况下，载荷应该是一个对象，这样可以包含多个字段并且记录的 mutation 会更易读：
+
+```js
+// ...
+mutations: {
+  increment (state, payload) {
+    state.count += payload.amount
+  }
+}
+
+store.commit('increment', {
+  amount: 10
+})
+```
+
+对象风格的提交方式
+
+提交 mutation 的另一种方式是直接使用包含 type 属性的对象：
+
+```js
+store.commit({
+  type: 'increment',
+  amount: 10
+})
+
+mutations: {
+  increment (state, payload) {
+    state.count += payload.amount
+  }
+}
+```
+
+Mutation 需遵守 Vue 的响应规则
+
+1. 最好提前在你的 store 中初始化好所有所需属性。
+2. 当需要在对象上添加新属性时，你应该
+  - 使用 `Vue.set(obj, 'newProp', 123)`, 或者
+  - 以新对象替换老对象。 `state.obj = { ...state.obj, newProp: 123 }`
+
+### Action
+
+### Module
+
+## 项目结构
+
+## 插件
 
 ## 严格模式
 
