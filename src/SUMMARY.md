@@ -22,6 +22,7 @@
 - [风格指南](./style-guide/README.md)
 - [vue-loader](./vue-loader/README.md)
 - [vue-cli](./vue-cli/README.md)
+  - [使用 Vue CLI 3](./vue-cli/v3-usage.md)
   - [依赖分析](./vue-cli/dependencies.md)
   - [scripts 脚本](./vue-cli/scripts.md)
   - [目录结构](./vue-cli/structure.md)
