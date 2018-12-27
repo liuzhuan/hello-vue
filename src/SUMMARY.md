@@ -19,6 +19,8 @@
   - [插槽](./guide/components/slots.md)
   - [动态&异步组件](./guide/components/dynamic-async.md)
   - [边界条件](./guide/components/edge-cases.md)
+- 重用和组合
+  - [自定义指令 Custom Directives](guide/custom-directive.md)
 - [风格指南](./style-guide/README.md)
 - [vue-loader](./vue-loader/README.md)
 - [vue-cli](./vue-cli/README.md)
