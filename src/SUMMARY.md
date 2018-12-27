@@ -6,6 +6,7 @@
   - [处理用户输入](./guide/intro/user-input.md)
   - [组件化应用构建](./guide/intro/component-build.md)
   - [Vue 实例](./guide/instance/README.md)
+  - [Vue 实例的生命周期 Lifecycle Hooks](./guide/instance-lifecycle-hooks.md)
   - [模板语法](./guide/template/README.md)
   - [计算属性和观察者](./guide/computed/README.md)
   - [绑定类和样式](./guide/class-and-style.md)

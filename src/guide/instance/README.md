@@ -138,7 +138,7 @@ new Vue({
 
 ## 生命周期流程图
 
-![lifecycle diagram](https://vuejs.org/images/lifecycle.png)
+![lifecycle diagram](https://vuejs.org/images/lifecycle.png?_sw-precache=6f2c97f045ba988851b02056c01c8d62)
 
 ## REF
 
