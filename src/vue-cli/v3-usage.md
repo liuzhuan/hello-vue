@@ -23,6 +23,19 @@ vue create my-project
 vue ui
 ```
 
+如果要升级全局安装的 `@vue/cli` 版本
+
+```sh
+$ vue --version
+3.2.1
+
+$ npm update -g @vue/cli
+# after a loooooong time update
+
+$ vue --version
+3.3.0
+```
+
 ## 系统组件
 
 Vue CLI 包含如下组件
