@@ -24,6 +24,7 @@
   - [混入 Mixins](guide/mixins.md)
   - [自定义指令 Custom Directives](guide/custom-directive.md)
   - [渲染函数和 JSX](guide/render-function.md)
+  - [插件 Plugins](guide/plugins.md)
 - [风格指南](./style-guide/README.md)
 - [vue-loader](./vue-loader/README.md)
 - [vue-cli](./vue-cli/README.md)
